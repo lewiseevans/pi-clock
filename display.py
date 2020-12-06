@@ -9,6 +9,8 @@ except ImportError:
 # Get the width and height of the display
 width, height = unicornhathd.get_shape()
 
+halfHeight = height/2
+
 # Select font and size
 FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 12)
 
@@ -26,7 +28,8 @@ def display(actualTime, date):
 
     text_width += width + 1
 
-    image = Image.new('RGB', (text_width, max(height, text_height)), (0, 0, 0))
+    image = Image.new('RGB', (text_width, max(
+        halfHeight, text_height)), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
