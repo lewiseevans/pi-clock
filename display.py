@@ -31,7 +31,7 @@ def display(actualTime, date):
     draw.text((0, 0), actualTime, fill=(255, 0, 0), font=font)
 
     for x in range(width):
-        for y in range(height):
+        for y in range(text_height):
             pixel = image.getpixel((x, y))
             r, g, b = [int(n) for n in pixel]
             unicornhathd.set_pixel(width-1-x, y, r, g, b)
