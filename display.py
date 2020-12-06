@@ -13,7 +13,7 @@ width, height = unicornhathd.get_shape()
 FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 8)
 
 
-def display(actualTime, date):
+def display(hour, minute):
 
     unicornhathd.rotation(90)
     unicornhathd.brightness(0.3)
@@ -22,13 +22,13 @@ def display(actualTime, date):
 
     font = ImageFont.truetype(font_file, font_size)
 
-    text_width, text_height = font.getsize(actualTime)
+    text_width, text_height = font.getsize(hour)
 
     image = Image.new('RGB', (text_width, text_height), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
-    draw.text((0, 0), actualTime, fill=(255, 0, 0), font=font)
+    draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
 
     for x in range(width):
         for y in range(text_height):
