@@ -1,4 +1,4 @@
 import display
 
 
-display.display(22)
+display.display("22")
