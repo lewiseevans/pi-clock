@@ -30,11 +30,18 @@ def display(hour, minute):
 
     draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
 
+    screenx = 0
+    screeny = 0
+
     for x in range(text_width):
         for y in range(text_height):
+            # Get the image pixel colour
             pixel = image.getpixel((x, y))
             r, g, b = [int(n) for n in pixel]
-            unicornhathd.set_pixel(width-1-x, y, r, g, b)
+
+            unicornhathd.set_pixel(screenx, screeny, r, g, b)
+            screeny += 1
+        screenx += 1
 
     unicornhathd.show()
     time.sleep(0.04)
