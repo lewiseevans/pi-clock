@@ -1,4 +1,13 @@
 import display
+import unicordhathd
 
+try:
 
-display.display("22:34", "2020-12-06")
+    while True:
+        display.display("22:34", "2020-12-06")
+
+except KeyboardInterrupt:
+    unicornhathd.off()
+
+finally:
+    unicordhathd.off()
