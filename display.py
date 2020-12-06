@@ -24,13 +24,11 @@ def display(actualTime, date):
 
     text_width, text_height = font.getsize(actualTime)
 
-    text_width += width + 1
-
     image = Image.new('RGB', (text_width, max(height, text_height)), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
-    draw.text((1, 2), actualTime, fill=(255, 0, 0), font=font)
+    draw.text((0, 0), actualTime, fill=(255, 0, 0), font=font)
 
     for x in range(width):
         for y in range(height):
