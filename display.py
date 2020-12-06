@@ -31,7 +31,7 @@ def display(hour, minute):
     draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
 
     for x in range(text_width):
-        for y in range(text_height-1):
+        for y in range(text_height):
             pixel = image.getpixel((x, y))
             r, g, b = [int(n) for n in pixel]
             unicornhathd.set_pixel(width-1-x, y, r, g, b)
