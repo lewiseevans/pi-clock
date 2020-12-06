@@ -30,7 +30,7 @@ def display(hour, minute):
 
     draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
 
-    for x in range(width):
+    for x in range(text_width):
         for y in range(text_height-1):
             pixel = image.getpixel((x, y))
             r, g, b = [int(n) for n in pixel]
