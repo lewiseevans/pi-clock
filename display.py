@@ -24,7 +24,7 @@ def display(actualTime, date):
 
     text_width, text_height = font.getsize(actualTime)
 
-    image = Image.new('RGB', (text_width, max(height, text_height)), (0, 0, 0))
+    image = Image.new('RGB', (text_width, text_height), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
