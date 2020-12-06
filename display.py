@@ -9,10 +9,8 @@ except ImportError:
 # Get the width and height of the display
 width, height = unicornhathd.get_shape()
 
-halfHeight = height/2
-
 # Select font and size
-FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 12)
+FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 8)
 
 
 def display(actualTime, date):
@@ -28,15 +26,14 @@ def display(actualTime, date):
 
     text_width += width + 1
 
-    image = Image.new('RGB', (text_width, max(
-        halfHeight, text_height)), (0, 0, 0))
+    image = Image.new('RGB', (text_width, max(height, text_height)), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
     draw.text((1, 2), actualTime, fill=(255, 0, 0), font=font)
 
     for x in range(width):
-        for y in range(halfHeight):
+        for y in range(height):
             pixel = image.getpixel((x, y))
             r, g, b = [int(n) for n in pixel]
             unicornhathd.set_pixel(width-1-x, y, r, g, b)
