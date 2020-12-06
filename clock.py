@@ -1,5 +1,5 @@
 import display
-import unicordhathd
+import unicornhathd
 
 try:
 
@@ -10,4 +10,4 @@ except KeyboardInterrupt:
     unicornhathd.off()
 
 finally:
-    unicordhathd.off()
+    unicornhathd.off()
