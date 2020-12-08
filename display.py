@@ -51,3 +51,5 @@ def convertToStr(time):
         timeStr += "0"
 
     timeStr += str(time)
+
+    return timeStr
