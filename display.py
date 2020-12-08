@@ -62,7 +62,7 @@ def chooseColour(hour):
 
     colour = (255, 0, 0)
 
-    if hour < 19 or hour > 8:
+    if hour < 19 and hour > 8:
         colour = (255, 255, 255)
 
     return colour
