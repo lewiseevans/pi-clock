@@ -17,7 +17,7 @@ def display(hour, minute):
     unicornhathd.rotation(180)
     unicornhathd.brightness(0.3)
     drawTime(hour, 7, 0)
-    drawTime(minute, 7, 7)
+    drawTime(minute, 7, 8)
     unicornhathd.show()
     time.sleep(0.04)
 
