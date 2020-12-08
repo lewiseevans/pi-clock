@@ -16,13 +16,16 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 10)
 def display(hour, minute):
     unicornhathd.rotation(90)
     unicornhathd.brightness(0.3)
-    drawTime(convertToStr(hour), 4, 2)
-    drawTime(convertToStr(minute), 4, 9)
+
+    colour = chooseColour(hour)
+
+    drawTime(convertToStr(hour), 4, 2, colour)
+    drawTime(convertToStr(minute), 4, 9, colour)
     unicornhathd.show()
     time.sleep(0.04)
 
 
-def drawTime(time, xOffset, yOffset):
+def drawTime(time, xOffset, yOffset, colour):
     font_file, font_size = FONT
     font = ImageFont.truetype(font_file, font_size)
 
@@ -32,7 +35,7 @@ def drawTime(time, xOffset, yOffset):
 
     draw = ImageDraw.Draw(image)
 
-    draw.text((0, 0), time, fill=(255, 0, 0), font=font)
+    draw.text((0, 0), time, fill=colour, font=font)
 
     for x in range(text_width):
         for y in range(text_height):
@@ -53,3 +56,13 @@ def convertToStr(time):
     timeStr += str(time)
 
     return timeStr
+
+
+def chooseColour(hour):
+
+    colour = (255, 0, 0)
+
+    if hour < 19 or hour > 8:
+        colour = (255, 255, 255)
+
+    return colour
