@@ -16,8 +16,8 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 8)
 def display(hour, minute):
     unicornhathd.rotation(180)
     unicornhathd.brightness(0.3)
-    drawTime(hour, 0, 0)
-    drawTime(minute, 8, 8)
+    drawTime(hour, 7, 0)
+    drawTime(minute, 7, 7)
     unicornhathd.show()
     time.sleep(0.04)
 
