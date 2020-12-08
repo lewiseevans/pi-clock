@@ -14,24 +14,25 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 8)
 
 
 def display(hour, minute):
-
     unicornhathd.rotation(180)
     unicornhathd.brightness(0.3)
+    drawTime(hour, 0, 0)
+    drawTime(minute, 8, 8)
+    unicornhathd.show()
+    time.sleep(0.04)
 
+
+def drawTime(time, xOffset, yOffset):
     font_file, font_size = FONT
-
     font = ImageFont.truetype(font_file, font_size)
 
-    text_width, text_height = font.getsize(hour)
+    text_width, text_height = font.getsize(time)
 
     image = Image.new('RGB', (text_width, text_height), (0, 0, 0))
 
     draw = ImageDraw.Draw(image)
 
-    draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
-
-    xOffset = 8
-    yOffset = 8
+    draw.text((0, 0), time, fill=(255, 0, 0), font=font)
 
     for x in range(text_width):
         for y in range(text_height):
@@ -40,7 +41,5 @@ def display(hour, minute):
             r, g, b = [int(n) for n in pixel]
 
             # Position it on screen
-            unicornhathd.set_pixel(width - 1 - x - xOffset, y - yOffset, r, g, b)
-
-    unicornhathd.show()
-    time.sleep(0.04)
+            unicornhathd.set_pixel(
+                width - 1 - x - xOffset, y - yOffset, r, g, b)
