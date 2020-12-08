@@ -10,14 +10,14 @@ except ImportError:
 width, height = unicornhathd.get_shape()
 
 # Select font and size
-FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 9)
+FONT = ('/usr/share/fonts/truetype/freefont/FreeSans.ttf', 10)
 
 
 def display(hour, minute):
-    unicornhathd.rotation(180)
+    unicornhathd.rotation(90)
     unicornhathd.brightness(0.3)
-    drawTime(hour, 6, 2)
-    drawTime(minute, 6, 9)
+    drawTime(hour, 4, 2)
+    drawTime(minute, 4, 9)
     unicornhathd.show()
     time.sleep(0.04)
 
