@@ -16,8 +16,8 @@ FONT = ('/usr/share/fonts/truetype/freefont/FreeSansBold.ttf', 10)
 def display(hour, minute):
     unicornhathd.rotation(90)
     unicornhathd.brightness(0.3)
-    drawTime(str(hour), 4, 2)
-    drawTime(str(minute), 4, 9)
+    drawTime(convertToStr(hour), 4, 2)
+    drawTime(convertToStr(minute), 4, 9)
     unicornhathd.show()
     time.sleep(0.04)
 
@@ -43,3 +43,11 @@ def drawTime(time, xOffset, yOffset):
             # Position it on screen
             unicornhathd.set_pixel(
                 width - 1 - x - xOffset, y - yOffset, r, g, b)
+
+
+def convertToStr(time):
+    timeStr = ""
+    if time < 10:
+        timeStr += "0"
+
+    timeStr += str(time)
