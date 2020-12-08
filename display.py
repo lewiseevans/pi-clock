@@ -30,8 +30,8 @@ def display(hour, minute):
 
     draw.text((0, 0), hour, fill=(255, 0, 0), font=font)
 
-    xOffset = 0
-    yOffset = 0
+    xOffset = 8
+    yOffset = 8
 
     for x in range(text_width):
         for y in range(text_height):
@@ -40,8 +40,7 @@ def display(hour, minute):
             r, g, b = [int(n) for n in pixel]
 
             # Position it on screen
-            unicornhathd.set_pixel(
-                width - 1 - x + xOffset, y + yOffset, r, g, b)
+            unicornhathd.set_pixel(width - 1 - x - xOffset, y - yOffset, r, g, b)
 
     unicornhathd.show()
     time.sleep(0.04)
