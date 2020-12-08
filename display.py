@@ -37,7 +37,7 @@ def display(hour, minute):
             r, g, b = [int(n) for n in pixel]
 
             # Position it on screen
-            unicornhathd.set_pixel(x, y, r, g, b)
+            unicornhathd.set_pixel(width - 1 - x, y, r, g, b)
 
     unicornhathd.show()
     time.sleep(0.04)
